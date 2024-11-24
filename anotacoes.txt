@@ -1,0 +1,15 @@
+npm init
+
+npm install bcryptjs connect-flash cookie-parser express express-flash express-session express-handlebars mysql2 sequelize session-file-store 
+npm intall --save-dev nodemon
+
+mkdir ./controllers/
+mkdir ./db/
+mkdir ./models/
+mkdir ./puplic/
+mkdir ./puplic/css
+mkdir ./puplic/img
+mkdir ./routes/
+mkdir ./session/
+mkdir ./views/
+mkdir ./views/layouts
