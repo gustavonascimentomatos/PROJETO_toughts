@@ -18,7 +18,7 @@
             <li><a href="/">Pensamentos</a></li>
             <!-- URLs apos autenticação -->
             {{#if session.userid}}
-                <li><a href="/tougths/dashboard">Dashboard</a></li>
+                <li><a href="/toughts/dashboard">Dashboard</a></li>
                 <li><a href="/logout">Sair</a></li>
             {{else}}
                 <li><a href="/login">Entrar</a></li>
@@ -28,12 +28,15 @@
     </nav>
 
     <div class="container">
-        <!-- Mensagens -->
+        <!-- Mensagens-->
+
         {{#if messages.message}}
-            <div class="message">
+            <div class="flash-message">
                 {{messages.message}}
+                <div class="progress-bar"></div>
             </div>
         {{/if}}
+
         {{{ body }}}
     </div>
     
@@ -47,4 +50,16 @@
     </footer>
 
 </body>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const flashMessage = document.querySelector('.flash-message');
+        if (flashMessage) {
+            // Remove a mensagem após 4 segundos (tempo da animação)
+            setTimeout(() => {
+                flashMessage.remove();
+            }, 4000);
+        }
+    });
+</script>
+
 </html>

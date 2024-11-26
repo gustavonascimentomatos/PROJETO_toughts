@@ -27,7 +27,7 @@ class AuthController {
 
         req.session.userid = user.id; // initialize session
         req.flash('message', 'Login realizado com sucesso!'); // Exibe mensagem de sucesso!
-        req.session.save(() => { res.redirect('/') }); // salvar sessão
+        req.session.save(() => { res.redirect('/toughts/dashboard') }); // salvar sessão
     }
 
     static register(req, res) {
